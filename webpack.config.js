@@ -1,13 +1,16 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+/* eslint-disable @typescript-eslint/no-var-requires */
+const { resolve, join } = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: path.resolve(__dirname, 'src', 'index.tsx'),
+  entry: resolve(__dirname, 'src', 'index.tsx'),
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    path: resolve(__dirname, 'dist'),
+    filename: '[name].js',
+    sourceMapFilename: '[name].js.map',
   },
+  devtool: 'source-map',
   mode: 'development',
   module: {
     rules: [
@@ -25,12 +28,12 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-        type: 'asset/resource',
-      },
-      {
         test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
         type: 'asset/inline',
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loader: 'file-loader',
       },
     ],
   },
@@ -39,15 +42,17 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/index.html'),
+      template: resolve(__dirname, './public/index.html'),
+      filename: 'index.html',
+      favicon: join(__dirname, 'public', 'favicon.png'),
     }),
     new CleanWebpackPlugin(),
   ],
   devServer: {
-    contentBase: path.join(__dirname, './src'),
+    contentBase: join(__dirname, './src'),
     port: 3000,
     hotOnly: true,
     compress: true,
     open: true,
   },
-}
+};
