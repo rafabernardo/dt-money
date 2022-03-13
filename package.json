@@ -6,7 +6,9 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack serve --config webpack.config.js --env env=development",
-    "build": "webpack --config webpack.config.js --env env=production"
+    "build": "webpack --config webpack.config.js --env env=production",
+    "preinstall": "node scripts/check.js",
+    "prestart": "node scripts/check.js"
   },
   "dependencies": {
     "eslint-config-prettier": "^8.3.0",
