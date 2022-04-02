@@ -6,8 +6,8 @@ import styles from './styles.css'
 
 const Header = () =>{
   return <header>
-    <svg aria-hidden="true" className={styles.icon} focusable="false">
-        <use xlinkHref={Logo} />
+   <svg viewBox={Logo.viewBox} >
+        <use xlinkHref={`#${Logo.id}`} />
       </svg>
   </header>
 }

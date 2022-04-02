@@ -1,6 +1,8 @@
-declare interface SvgrComponent extends React.StatelessComponent<React.SVGAttributes<SVGElement>> {}
+import { loader } from 'webpack';
 
-declare module '*.svg' {
-  const content: SvgrComponent
-  export default content
-}
+export = SVGSpriteLoader;
+
+declare function SVGSpriteLoader(
+  this: loader.LoaderContext,
+  source: string | Buffer
+): string | Buffer | void | undefined;
