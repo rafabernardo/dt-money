@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const { resolve, join } = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
@@ -8,9 +7,9 @@ module.exports = {
   entry: resolve(__dirname, 'src', 'index.tsx'),
   output: {
     path: resolve(__dirname, 'dist'),
-    publicPath: '/',
-    filename: 'static/js/[name].js',
-    chunkFilename: 'static/js/[name].chunk.js',
+    filename: '[name].[hash:8].js',
+    sourceMapFilename: '[name].[hash:8].map',
+    chunkFilename: '[id].[hash:8].js',
   },
   devtool: 'source-map',
   mode: 'development',
@@ -52,17 +51,14 @@ module.exports = {
       template: resolve(__dirname, './public/index.html'),
       filename: 'index.html',
       favicon: join(__dirname, 'public', 'favicon.png'),
-      inject: true,
     }),
     new CleanWebpackPlugin(),
   ],
   devServer: {
-    compress: true,
-    hot: true,
-    contentBase: './build',
-    historyApiFallback: true,
+    contentBase: join(__dirname, './src'),
     port: 3000,
     hotOnly: true,
+    compress: true,
     open: true,
   },
 }
