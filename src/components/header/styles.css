@@ -1,3 +1,11 @@
-.icon {
-  color: red;
+.container {
+  background-color: black;
+
+  .icon {
+    width: 10px;
+  }
+
+  .title {
+    font-size: 12px;
+  }
 }

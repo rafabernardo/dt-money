@@ -2,3 +2,4 @@ node_modules
 
 ### VisualStudioCode ###
 **/.vscode/
+/dist

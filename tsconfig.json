@@ -13,12 +13,15 @@
     "strict": true,
     "lib": ["es6", "es7", "dom"],
     "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "paths": {
+      "src/*": ["./src/*"]
+    },
     "types": [
-      "./node_modules/@types",
       "./@types"
     ],
   },
   "compileOnSave": true,
-  "include": [ "./src/**/*", ],
+  "include": [ "./src/*"],
   "exclude": ["build", "node_modules"]
 }
