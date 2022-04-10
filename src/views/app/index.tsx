@@ -1,6 +1,12 @@
 import React from 'react'
 import Header from '../../components/header'
 
-const App = () => <div> This is a new react app <Header /></div>
+import '../../styles/global.css'
+
+const App = () => (
+  <>
+    <Header />
+  </>
+)
 
 export default App

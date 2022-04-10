@@ -1,11 +1,32 @@
 .container {
-  background-color: black;
+  background-color: var(--blue);
 
-  .icon {
-    width: 10px;
-  }
+  .content {
+    display: flex;
+    align-items: center;
+    max-width: 90rem;
+    justify-content: space-between;
+    padding: 2rem 1rem 12rem;
+    margin: 0 auto;
 
-  .title {
-    font-size: 12px;
+    .icon {
+      height: 4rem;
+    }
+
+    .button {
+      font-size: 1.2rem;
+      color: #fff;
+      background: var(--blue-light);
+      border: 0;
+      border-radius: 0.5rem;
+      padding: 0 2rem;
+      height: 3.75rem;
+
+      transition: filter 0.2s;
+
+      &:hover {
+        filter: brightness(0.9);
+      }
+    }
   }
 }
