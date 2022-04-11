@@ -11,6 +11,8 @@ body {
   font-size: 62.5%; /* 62.5% of 16px = 10px */
   text-rendering: optimizeLegibility;
   min-height: 100vh;
+  font-family: Roboto, sans-serif;
+  background-color: var(--gray-light);
 }
 
 button {
