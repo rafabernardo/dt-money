@@ -1,0 +1,45 @@
+.table {
+  margin-top: 4rem;
+  width: 100%;
+  border-spacing: 0 0.5rem;
+
+  .thead {
+    background-color: var(--gray-light);
+
+    & tr > th {
+      text-align: left;
+      padding: 1rem 2rem;
+      font-weight: 400;
+      color: var(--text-body);
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+    }
+  }
+
+  .tbody {
+    color: var(--text-body);
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    text-align: left;
+
+    & tr > td {
+      border: 0;
+      padding: 1rem 2rem;
+      font-weight: 400;
+      background-color: #fff;
+      border-radius: 0.25rem;
+    }
+
+    & tr > td.withdraw {
+      color: var(--red);
+    }
+
+    & tr > td.deposit {
+      color: var(--green);
+    }
+
+    & tr > td:first-child {
+      color: var(--gray-dark);
+    }
+  }
+}
