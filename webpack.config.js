@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const Dotenv = require('dotenv-webpack')
 
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
@@ -71,6 +72,7 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js', '.jsx'],
   },
   plugins: [
+    new Dotenv(),
     new SpriteLoaderPlugin(),
     new HtmlWebpackPlugin({
       template: resolve(__dirname, './public/index.html'),
