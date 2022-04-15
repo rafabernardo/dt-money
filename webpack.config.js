@@ -10,9 +10,9 @@ module.exports = {
   entry: resolve(__dirname, 'src', 'index.tsx'),
   output: {
     path: resolve(__dirname, 'dist'),
-    filename: '[name].[hash:8].js',
-    sourceMapFilename: '[name].[hash:8].map',
-    chunkFilename: '[id].[hash:8].js',
+    filename: '[name].[chunkhash:8].js',
+    sourceMapFilename: '[name].[chunkhash:8].map',
+    chunkFilename: '[id].[chunkhash:8].js',
   },
   devtool: 'source-map',
   mode: 'development',
@@ -32,7 +32,7 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              modules: { localIdentName: '[local]___[hash:base64:5]' },
+              modules: { localIdentName: '[local]___[chunkhash:5]' },
               sourceMap: true,
               importLoaders: 1,
             },
@@ -74,20 +74,21 @@ module.exports = {
     new SpriteLoaderPlugin(),
     new HtmlWebpackPlugin({
       template: resolve(__dirname, './public/index.html'),
-      filename: 'index.html',
+      filename: './index.html',
+      hash: true,
       favicon: join(__dirname, 'public', 'favicon.png'),
     }),
     new MiniCssExtractPlugin({
-      filename: isDevelopment ? '[name].css' : '[name].[hash].css',
-      chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css',
+      filename: isDevelopment ? '[name].css' : '[name].[chunkhash].css',
+      chunkFilename: isDevelopment ? '[id].css' : '[id].[chunkhash].css',
     }),
     new CleanWebpackPlugin(),
   ],
   devServer: {
     contentBase: join(__dirname, '/public'),
     port: 3000,
-    hotOnly: true,
     compress: true,
     historyApiFallback: true,
+    open: true,
   },
 }
