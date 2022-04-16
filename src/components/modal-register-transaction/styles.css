@@ -1,0 +1,56 @@
+.modal {
+  background-color: var(--gray-light);
+  border-radius: 0.5rem;
+  height: 58rem;
+  max-width: 57rem;
+  outline: none;
+  position: relative;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+
+  .container {
+    padding: 3rem;
+
+    .header {
+      display: grid;
+      grid-template: 1fr / auto;
+
+      .close-button {
+        border: none;
+        outline: none;
+        cursor: pointer;
+        background: none;
+        padding: 0;
+        justify-self: right;
+
+        .close {
+          height: 1.5rem;
+        }
+
+        .close:hover {
+          filter: opacity(0.7);
+        }
+      }
+
+      .title {
+        font-size: 2.4rem;
+        font-weight: 600;
+        line-height: 3rem;
+        margin-bottom: 1rem;
+        color: var(--gray-dark);
+      }
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(48, 50, 56, 0.8);
+  -webkit-backdrop-filter: blur(5px);
+}
