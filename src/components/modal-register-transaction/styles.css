@@ -1,16 +1,16 @@
 .modal {
   background-color: var(--gray-light);
   border-radius: 0.5rem;
-  height: 58rem;
-  max-width: 57rem;
   outline: none;
   position: relative;
   top: 50%;
   transform: translate(-50%, -50%);
   left: 50%;
+  width: 100%;
+  max-width: 57.6rem;
 
   .container {
-    padding: 3rem;
+    padding: 3rem 4.8rem;
 
     .header {
       display: grid;
@@ -41,6 +41,48 @@
         color: var(--gray-dark);
       }
     }
+
+    .body {
+      margin-top: 3.2rem;
+
+      .form {
+        display: grid;
+        grid-template: 1fr / auto;
+        grid-gap: 1.6rem;
+
+        .input {
+          padding: 0 1.5rem;
+          height: 4rem;
+          border-radius: 0.5rem;
+          border: 0.1rem solid #d7d7d7;
+
+          background: #e7e9ee;
+          font-weight: 400;
+          font-size: 1.2rem;
+
+          &::placeholder {
+            color: var(--text-body);
+          }
+        }
+
+        .button-submit {
+          width: 100%;
+          padding: 0 1.5rem;
+          height: 4rem;
+          background-color: var(--green);
+          color: #fff;
+          border: 0;
+          font-size: 1.4rem;
+          margin-top: 1.5rem;
+          border-radius: 0.5rem;
+          transition: filter 0.2s;
+
+          &:hover {
+            filter: opacity(0.7);
+          }
+        }
+      }
+    }
   }
 }
 
@@ -51,6 +93,5 @@
   right: 0;
   left: 0;
   bottom: 0;
-  background-color: rgba(48, 50, 56, 0.8);
-  -webkit-backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.5);
 }

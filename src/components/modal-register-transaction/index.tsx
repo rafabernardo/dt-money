@@ -34,6 +34,16 @@ const ModalRegisterTransaction = ({
 
           <h2 className={styles.title}>Cadastrar transação</h2>
         </section>
+        <section className={styles.body}>
+          <form className={styles.form}>
+            <input className={styles.input} placeholder="Título" />
+            <input className={styles.input} placeholder="Valor" type="number" />
+            <input className={styles.input} placeholder="Categoria" />
+            <button className={styles['button-submit']} type="submit">
+              Cadastrar
+            </button>
+          </form>
+        </section>
       </div>
     </Modal>
   )
