@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import classesNames from 'classnames'
 import Modal from 'react-modal'
 
@@ -20,6 +20,16 @@ const ModalRegisterTransaction = ({
   onClose,
   className,
 }: ModalRegisterTransactionProps) => {
+  const [type, setType] = useState('deposit')
+
+  const handleSetTypeDeposit = () => {
+    setType('deposit')
+  }
+
+  const handleSetTypeWithdraw = () => {
+    setType('withdraw')
+  }
+
   return (
     <Modal
       isOpen={isOpen}
@@ -41,17 +51,29 @@ const ModalRegisterTransaction = ({
             <input className={styles.input} placeholder="Título" />
             <input className={styles.input} placeholder="Valor" type="number" />
             <div className={styles['buttons-wrapper']}>
-              <button className={styles.button}>
-                <svg viewBox={OutcomeIcon.viewBox} className={styles.icon}>
-                  <use xlinkHref={`#${OutcomeIcon.id}`} />
-                </svg>
-                <span className={styles.label}>Saída</span>
-              </button>
-              <button className={styles.button}>
+              <button
+                className={classesNames(styles.button, {
+                  [styles.deposit]: type === 'deposit',
+                })}
+                onClick={handleSetTypeDeposit}
+                type="button"
+              >
                 <svg viewBox={IncomeIcon.viewBox} className={styles.icon}>
                   <use xlinkHref={`#${IncomeIcon.id}`} />
                 </svg>
                 <span className={styles.label}>Entrada</span>
+              </button>
+              <button
+                className={classesNames(styles.button, {
+                  [styles.withdraw]: type === 'withdraw',
+                })}
+                onClick={handleSetTypeWithdraw}
+                type="button"
+              >
+                <svg viewBox={OutcomeIcon.viewBox} className={styles.icon}>
+                  <use xlinkHref={`#${OutcomeIcon.id}`} />
+                </svg>
+                <span className={styles.label}>Saída</span>
               </button>
             </div>
             <input className={styles.input} placeholder="Categoria" />
