@@ -70,6 +70,11 @@ module.exports = {
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx'],
+    alias: {
+      _services: resolve(__dirname, 'src', 'services'),
+      _asset: resolve(__dirname, 'src', 'asset'),
+      _components: resolve(__dirname, 'src', 'components'),
+    },
   },
   plugins: [
     new Dotenv(),
