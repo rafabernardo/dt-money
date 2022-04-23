@@ -7,6 +7,7 @@ import OutcomeIcon from '_assets/outcome.svg'
 import IncomeIcon from '_assets/income.svg'
 import { useTransactions } from '_hooks/TransactionsContext'
 import { ITransaction } from '_types/transactions'
+import { TRANSACTION_TYPES } from '_utils/constants'
 
 import styles from './styles.css'
 
@@ -24,15 +25,15 @@ const ModalRegisterTransaction = ({
   className,
 }: ModalRegisterTransactionProps) => {
   const { createTransaction } = useTransactions()
-  const [type, setType] = useState('deposit')
+  const [type, setType] = useState(TRANSACTION_TYPES.DEPOSIT)
   const [values, setValues] = useState({})
 
   const handleSetTypeDeposit = () => {
-    setType('deposit')
+    setType(TRANSACTION_TYPES.DEPOSIT)
   }
 
   const handleSetTypeWithdraw = () => {
-    setType('withdraw')
+    setType(TRANSACTION_TYPES.WITHDRAW)
   }
 
   const handleSubmit = async (event: FormEvent) => {
@@ -83,7 +84,7 @@ const ModalRegisterTransaction = ({
             <div className={styles['buttons-wrapper']}>
               <button
                 className={classesNames(styles.button, {
-                  [styles.deposit]: type === 'deposit',
+                  [styles.deposit]: type === TRANSACTION_TYPES.DEPOSIT,
                 })}
                 onClick={handleSetTypeDeposit}
                 type="button"
@@ -95,7 +96,7 @@ const ModalRegisterTransaction = ({
               </button>
               <button
                 className={classesNames(styles.button, {
-                  [styles.withdraw]: type === 'withdraw',
+                  [styles.withdraw]: type === TRANSACTION_TYPES.WITHDRAW,
                 })}
                 onClick={handleSetTypeWithdraw}
                 type="button"

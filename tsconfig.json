@@ -22,7 +22,8 @@
           "_styles/*": ["src/styles/*"],
           "_hooks/*": ["src/hooks/*"],
           "_types/*": ["src/@types/*"],
-          "_views/*": ["src/views/*"]
+          "_views/*": ["src/views/*"],
+          "_utils/*": ["src/utils/*"]
       },
       "allowSyntheticDefaultImports": true,
       "esModuleInterop": true,

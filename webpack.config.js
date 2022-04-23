@@ -78,6 +78,7 @@ module.exports = {
       _hooks: resolve(__dirname, 'src', 'hooks'),
       _types: resolve(__dirname, 'src', '@types'),
       _views: resolve(__dirname, 'src', 'views'),
+      _utils: resolve(__dirname, 'src', 'utils'),
     },
   },
   plugins: [
