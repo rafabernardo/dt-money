@@ -72,8 +72,9 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js', '.jsx'],
     alias: {
       _services: resolve(__dirname, 'src', 'services'),
-      _asset: resolve(__dirname, 'src', 'asset'),
+      _assets: resolve(__dirname, 'src', 'assets'),
       _components: resolve(__dirname, 'src', 'components'),
+      _styles: resolve(__dirname, 'src', 'styles'),
     },
   },
   plugins: [

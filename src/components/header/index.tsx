@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
-import Logo from '../../assets/logo.svg'
-import ModalRegisterTransaction from '../modal-register-transaction'
+import Logo from '_assets/logo.svg'
+import ModalRegisterTransaction from '_components/modal-register-transaction'
 
 import styles from './styles.css'
 

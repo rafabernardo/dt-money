@@ -2,11 +2,12 @@ import React, { FormEvent, useState } from 'react'
 import classesNames from 'classnames'
 import Modal from 'react-modal'
 
-import CloseIcon from '../../assets/close.svg'
-import OutcomeIcon from '../../assets/outcome.svg'
-import IncomeIcon from '../../assets/income.svg'
-import styles from './styles.css'
+import CloseIcon from '_assets/close.svg'
+import OutcomeIcon from '_assets/outcome.svg'
+import IncomeIcon from '_assets/income.svg'
 import { api } from '_services/requests'
+
+import styles from './styles.css'
 
 interface ModalRegisterTransactionProps {
   isOpen: boolean

@@ -1,6 +1,6 @@
 import React from 'react'
-import Summary from '../summary'
-import TransactionsTable from '../transactions-table'
+import Summary from '_components/summary'
+import TransactionsTable from '_components/transactions-table'
 
 import styles from './styles.css'
 

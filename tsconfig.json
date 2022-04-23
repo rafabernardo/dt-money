@@ -16,9 +16,10 @@
       "rootDir": "./",
       "typeRoots": ["./node_modules/@types", "./src/@types"],
       "paths": {
-          "_asset/*": ["src/asset/*"],
+          "_assets/*": ["src/assets/*"],
           "_components/*": ["src/components/*"],
-          "_services/*": ["src/services/*"]
+          "_services/*": ["src/services/*"],
+          "_styles/*": ["src/styles/*"]
       },
       "allowSyntheticDefaultImports": true,
       "esModuleInterop": true,

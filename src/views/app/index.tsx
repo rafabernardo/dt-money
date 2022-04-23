@@ -1,16 +1,10 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
-import Header from '../../components/header'
-import Dashboard from '../../components/dashboard'
-import { api } from '../../services/requests'
-
-import '../../styles/global.css'
+import Header from '_components/header'
+import Dashboard from '_components/dashboard'
+import '_styles/global.css'
 
 const App = () => {
-  useEffect(() => {
-    api.get('/transactions').then((response: any) => console.log(response))
-  }, [])
-
   return (
     <>
       <Header />

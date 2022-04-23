@@ -1,9 +1,9 @@
 import React from 'react'
 import classesNames from 'classnames'
 
-import IncomeLogo from '../../assets/income.svg'
-import OutcomeLogo from '../../assets/outcome.svg'
-import TotalLogo from '../../assets/total.svg'
+import IncomeLogo from '_assets/income.svg'
+import OutcomeLogo from '_assets/outcome.svg'
+import TotalLogo from '_assets/total.svg'
 
 import styles from './styles.css'
 
