@@ -75,6 +75,9 @@ module.exports = {
       _assets: resolve(__dirname, 'src', 'assets'),
       _components: resolve(__dirname, 'src', 'components'),
       _styles: resolve(__dirname, 'src', 'styles'),
+      _hooks: resolve(__dirname, 'src', 'hooks'),
+      _types: resolve(__dirname, 'src', '@types'),
+      _views: resolve(__dirname, 'src', 'views'),
     },
   },
   plugins: [

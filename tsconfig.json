@@ -19,7 +19,10 @@
           "_assets/*": ["src/assets/*"],
           "_components/*": ["src/components/*"],
           "_services/*": ["src/services/*"],
-          "_styles/*": ["src/styles/*"]
+          "_styles/*": ["src/styles/*"],
+          "_hooks/*": ["src/hooks/*"],
+          "_types/*": ["src/@types/*"],
+          "_views/*": ["src/views/*"]
       },
       "allowSyntheticDefaultImports": true,
       "esModuleInterop": true,

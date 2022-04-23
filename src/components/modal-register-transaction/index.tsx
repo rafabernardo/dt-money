@@ -5,7 +5,8 @@ import Modal from 'react-modal'
 import CloseIcon from '_assets/close.svg'
 import OutcomeIcon from '_assets/outcome.svg'
 import IncomeIcon from '_assets/income.svg'
-import { api } from '_services/requests'
+import { useTransactions } from '_hooks/TransactionsContext'
+import { ITransaction } from '_types/transactions'
 
 import styles from './styles.css'
 
@@ -22,6 +23,7 @@ const ModalRegisterTransaction = ({
   onClose,
   className,
 }: ModalRegisterTransactionProps) => {
+  const { createTransaction } = useTransactions()
   const [type, setType] = useState('deposit')
   const [values, setValues] = useState({})
 
@@ -33,10 +35,11 @@ const ModalRegisterTransaction = ({
     setType('withdraw')
   }
 
-  const handleSubmit = (event: FormEvent) => {
+  const handleSubmit = async (event: FormEvent) => {
     event.preventDefault()
-    const payload = { ...values, type }
-    api.post('/transaction', payload)
+    const payload = { ...values, type: type }
+    await createTransaction(payload as ITransaction)
+    onClose()
   }
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
