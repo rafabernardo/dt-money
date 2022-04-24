@@ -55,6 +55,7 @@
     "mini-css-extract-plugin": "^2.6.0",
     "postcss": "^8.4.12",
     "postcss-css-reset": "^1.0.2",
+    "postcss-custom-media": "^8.0.0",
     "postcss-import": "^14.1.0",
     "postcss-loader": "^6.2.1",
     "postcss-nested": "^5.0.6",
