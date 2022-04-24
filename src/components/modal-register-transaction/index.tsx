@@ -5,7 +5,7 @@ import Modal from 'react-modal'
 import CloseIcon from '_assets/close.svg'
 import OutcomeIcon from '_assets/outcome.svg'
 import IncomeIcon from '_assets/income.svg'
-import { useTransactions } from '_hooks/TransactionsContext'
+import { useTransactions } from '_hooks/use-transactions'
 import { ITransaction } from '_types/transactions'
 import { TRANSACTION_TYPES } from '_utils/constants'
 

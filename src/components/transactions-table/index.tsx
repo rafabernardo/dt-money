@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { api } from '_services/requests'
-import { useTransactions } from '_hooks/TransactionsContext'
+import { useTransactions } from '_hooks/use-transactions'
 import styles from './styles.css'
 
 const TransactionsTable = () => {

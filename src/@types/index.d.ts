@@ -6,5 +6,5 @@ declare module '*.css' {
     [className: string]: string
   }
   const classNames: IClassNames
-  export = classNames;
+  export = classNames
 }

@@ -4,7 +4,7 @@ import classesNames from 'classnames'
 import IncomeLogo from '_assets/income.svg'
 import OutcomeLogo from '_assets/outcome.svg'
 import TotalLogo from '_assets/total.svg'
-import { useTransactions } from '_hooks/TransactionsContext'
+import { useTransactions } from '_hooks/use-transactions'
 import { TRANSACTION_TYPES, TRANSACTION_TYPES_LABEL } from '_utils/constants'
 
 import styles from './styles.css'
