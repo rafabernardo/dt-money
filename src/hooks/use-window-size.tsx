@@ -1,13 +1,13 @@
-import { useState, useEffect } from 'react'
-import { ISize } from '_types/size'
+import { useState, useEffect, useMemo } from 'react'
+import { ISize, IWindowSizeProps } from '_types/size'
+import { TABLET, MOBILE } from '_utils/constants'
 
-// Hook
-function useWindowSize(): ISize {
+export const useWindowSize = (): IWindowSizeProps => {
   // Initialize state with undefined width/height so server and client renders match
   // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
   const [windowSize, setWindowSize] = useState<ISize>({
-    width: undefined,
-    height: undefined,
+    width: 0,
+    height: 0,
   })
   useEffect(() => {
     // Handler to call on window resize
@@ -25,5 +25,13 @@ function useWindowSize(): ISize {
     // Remove event listener on cleanup
     return () => window.removeEventListener('resize', handleResize)
   }, []) // Empty array ensures that effect is only run on mount
-  return windowSize
+
+  const isMobile = useMemo(() => windowSize.width < MOBILE, [windowSize.width])
+  const isDesktop = useMemo(
+    () => windowSize.width >= TABLET,
+    [windowSize.width]
+  )
+  const isTablet = useMemo(() => !isMobile && !isDesktop, [isDesktop, isMobile])
+
+  return { windowSize, isMobile, isDesktop, isTablet }
 }
