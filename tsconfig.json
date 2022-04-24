@@ -30,6 +30,6 @@
       "importsNotUsedAsValues": "preserve",
       "incremental": true
   },
-  "include": ["src"],
+  "include": ["src", ".eslintrc.js"],
   "exclude": ["**/node_modules", "**/.*/"]
 }

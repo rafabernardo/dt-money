@@ -1,4 +1,4 @@
-const path = require('path')
+import path from 'path'
 
 module.exports = {
   root: true,
@@ -7,7 +7,6 @@ module.exports = {
     node: true,
     es6: true,
     jest: true,
-    'jsx-control-statements/jsx-control-statements': true,
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {

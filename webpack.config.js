@@ -1,4 +1,4 @@
-const { resolve, join } = require('path')
+const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
@@ -8,15 +8,25 @@ const Dotenv = require('dotenv-webpack')
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
 module.exports = {
-  entry: resolve(__dirname, 'src', 'index.tsx'),
+  entry: path.resolve(__dirname, 'src', 'index.tsx'),
   output: {
-    path: resolve(__dirname, 'dist'),
-    filename: '[name].[chunkhash:8].js',
-    sourceMapFilename: '[name].[chunkhash:8].map',
-    chunkFilename: '[id].[chunkhash:8].js',
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
+    // filename: '[name].[chunkhash:8].js',
+    // sourceMapFilename: '[name].[chunkhash:8].map',
+    // chunkFilename: '[id].[chunkhash:8].js',
+  },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, '/public'),
+    },
+    port: 3000,
+    compress: true,
+    historyApiFallback: true,
+    open: true,
   },
   devtool: 'source-map',
-  mode: 'development',
+  mode: isDevelopment ? 'development' : 'production',
   module: {
     rules: [
       {
@@ -71,36 +81,29 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx'],
     alias: {
-      _services: resolve(__dirname, 'src', 'services'),
-      _assets: resolve(__dirname, 'src', 'assets'),
-      _components: resolve(__dirname, 'src', 'components'),
-      _styles: resolve(__dirname, 'src', 'styles'),
-      _hooks: resolve(__dirname, 'src', 'hooks'),
-      _types: resolve(__dirname, 'src', '@types'),
-      _views: resolve(__dirname, 'src', 'views'),
-      _utils: resolve(__dirname, 'src', 'utils'),
+      _services: path.resolve(__dirname, 'src', 'services'),
+      _assets: path.resolve(__dirname, 'src', 'assets'),
+      _components: path.resolve(__dirname, 'src', 'components'),
+      _styles: path.resolve(__dirname, 'src', 'styles'),
+      _hooks: path.resolve(__dirname, 'src', 'hooks'),
+      _types: path.resolve(__dirname, 'src', '@types'),
+      _views: path.resolve(__dirname, 'src', 'views'),
+      _utils: path.resolve(__dirname, 'src', 'utils'),
     },
   },
   plugins: [
     new Dotenv(),
     new SpriteLoaderPlugin(),
-    new HtmlWebpackPlugin({
-      template: resolve(__dirname, './public/index.html'),
-      filename: './index.html',
-      hash: true,
-      favicon: join(__dirname, 'public', 'favicon.png'),
-    }),
     new MiniCssExtractPlugin({
       filename: isDevelopment ? '[name].css' : '[name].[chunkhash].css',
       chunkFilename: isDevelopment ? '[id].css' : '[id].[chunkhash].css',
     }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, './public/index.html'),
+      filename: './index.html',
+      hash: true,
+      favicon: path.join(__dirname, 'public', 'favicon.png'),
+    }),
     new CleanWebpackPlugin(),
   ],
-  devServer: {
-    contentBase: join(__dirname, '/public'),
-    port: 3000,
-    compress: true,
-    historyApiFallback: true,
-    open: true,
-  },
 }
