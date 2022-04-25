@@ -4,34 +4,7 @@
   grid-gap: 3rem;
   margin-top: -6rem;
 
-  .kpi-container {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    background-color: #fff;
-    padding: 2rem 3rem;
-    border-radius: 0.5rem;
-    color: var(--gray-dark);
-
-    .title {
-      font-style: normal;
-      font-weight: 400;
-      font-size: 1.6rem;
-      line-height: 2.4rem;
-    }
-
-    .icon {
-      height: 3rem;
-    }
-
-    .text {
-      font-weight: 600;
-      font-size: 2.4rem;
-      line-height: 3.6rem;
-    }
-
-    &.highlight {
-      background-color: var(--green);
-      color: #fff;
-    }
+  @media (--sm-viewport) {
+    overflow-x: scroll;
   }
 }

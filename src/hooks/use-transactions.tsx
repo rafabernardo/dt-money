@@ -5,7 +5,9 @@ import {
   ITransactionsContext,
   ITransaction,
   ITransactionsProviderProps,
+  ITransactionsResponse,
 } from '_types/transactions'
+import { useAsync } from '_hooks/use-async'
 
 const TransactionsContext = createContext<ITransactionsContext>(
   {} as ITransactionsContext
@@ -16,11 +18,27 @@ export const TransactionsContextProvider: React.FC = ({
 }: ITransactionsProviderProps) => {
   const [transactions, setTransactions] = useState<ITransaction[]>([])
 
+  const getTransactions = () => {
+    return api.get('/transactions')
+  }
+
+  const { execute, status, value, error } = useAsync<ITransactionsResponse>(
+    getTransactions,
+    false
+  )
+
   useEffect(() => {
-    api
-      .get('/transactions')
-      .then((response: any) => setTransactions(response.data.transactions))
+    setTimeout(() => {
+      execute()
+    }, 2000)
   }, [])
+
+  useEffect(() => {
+    if (value) {
+      const { transactions } = value
+      setTransactions(transactions)
+    }
+  }, [value])
 
   const createTransaction = async (transactionInput: ITransaction) => {
     const response = await api.post('/transaction', {
@@ -32,7 +50,9 @@ export const TransactionsContextProvider: React.FC = ({
   }
 
   return (
-    <TransactionsContext.Provider value={{ transactions, createTransaction }}>
+    <TransactionsContext.Provider
+      value={{ transactions, status, error, createTransaction }}
+    >
       {children}
     </TransactionsContext.Provider>
   )

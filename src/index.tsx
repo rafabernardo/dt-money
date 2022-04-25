@@ -20,6 +20,22 @@ createServer({
           category: 'food',
           createdAt: new Date('2021-03-15 08:00:00'),
         },
+        {
+          id: 2,
+          title: 'Transaction 2',
+          amount: 100,
+          type: 'deposit',
+          category: 'food',
+          createdAt: new Date('2010-03-15 08:00:00'),
+        },
+        {
+          id: 3,
+          title: 'Transaction 2',
+          amount: 100,
+          type: 'deposit',
+          category: 'food',
+          createdAt: new Date('2022-03-15 08:00:00'),
+        },
       ],
     })
   },

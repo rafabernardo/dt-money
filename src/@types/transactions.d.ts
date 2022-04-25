@@ -10,8 +10,14 @@ export interface ITransaction {
 export interface ITransactionsContext {
   transactions: ITransaction[]
   createTransaction: (transaction: ITransaction) => void
+  status: string
+  error: string | null
 }
 
 export interface ITransactionsProviderProps {
   children: React.ReactNode
+}
+
+export interface ITransactionsResponse {
+  transactions: ITransaction[]
 }

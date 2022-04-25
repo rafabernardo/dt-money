@@ -29,4 +29,22 @@
       }
     }
   }
+
+  @media (--sm-viewport), (--md-viewport) {
+    .content {
+      margin: 0 2rem;
+      padding: 2rem 0 14rem;
+
+      .icon {
+        height: 3rem;
+      }
+
+      .button {
+        display: flex;
+        align-items: center;
+        height: 3rem;
+        padding: 1rem;
+      }
+    }
+  }
 }
