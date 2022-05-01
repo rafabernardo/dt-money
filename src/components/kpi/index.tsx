@@ -9,7 +9,6 @@ import { IKpiProps } from '_types/kpi'
 import styles from './styles.css'
 
 const Kpi = ({ value, icon, type, createdAt, isLoading }: IKpiProps) => {
-  console.log('🚀 ~ file: index.tsx ~ line 12 ~ Kpi ~ type', type)
   const { isDesktop } = useWindowSize()
 
   const statusBackgroundColor = useMemo(() => {

@@ -25,8 +25,6 @@ const KPI_ICONS = {
 const Summary = () => {
   const { transactions, status } = useTransactions()
 
-  const { isDesktop } = useWindowSize()
-
   const summary = useMemo(
     () =>
       transactions.reduce(
