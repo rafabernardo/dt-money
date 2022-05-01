@@ -6,7 +6,6 @@
   top: 50%;
   transform: translate(-50%, -50%);
   left: 50%;
-  width: 100%;
   max-width: 57.6rem;
 
   .container {
@@ -124,6 +123,17 @@
         }
       }
     }
+  }
+
+  @media (--sm-viewport), (--md-viewport) {
+    position: fixed;
+    bottom: 0;
+    top: auto;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100%;
+    max-width: 100%;
+    min-height: 44.6rem;
   }
 }
 
