@@ -4,7 +4,13 @@
   grid-gap: 3rem;
   margin-top: -6rem;
 
-  @media (--sm-viewport) {
+  @media (--sm-viewport), (--md-viewport) {
     overflow-x: scroll;
+    grid-gap: 2rem;
+    margin: -6rem 2rem 0 2rem;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }
