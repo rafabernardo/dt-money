@@ -10,6 +10,11 @@ The project is based on chapter 2 of the Rocketseat course, it is built from scr
 
 ![Home Page](/screenshots/image.png 'Home Page')
 
+### Requirements
+
+- [Node.js](https://nodejs.org/en/)
+- [Yarn](https://classic.yarnpkg.com/)
+
 ## Available Commands
 
 In the project directory, you can run:
