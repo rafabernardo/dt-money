@@ -1,6 +1,6 @@
 <h1 align="center">dt-money</h1>
 
-<p align="center">Project of financial manager from module 2 of Ignite Bootcamp.</p>
+<p align="center">Project of finance manager from module 2 of Ignite Bootcamp.</p>
 
 ## About the Project
 
