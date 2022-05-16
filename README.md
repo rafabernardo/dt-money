@@ -4,7 +4,7 @@
 
 ## About the Project
 
-The project is based on chapter 2 of the Rocketseat course, it is built from scratch using webpack and babel, with the purpose of studying how to create a React project with typescript. The project uses MirageJS to spoof an API and uses Context to hook the response.
+The project is based on chapter 2 of the Rocketseat course, it is built from scratch using webpack and babel, with the purpose of studying how to create a React project with typescript. The project uses MirageJS to fake an API and uses Context to hook the response.
 
 ## Screenshots
 
