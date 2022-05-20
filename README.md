@@ -21,8 +21,7 @@ In the project directory, you can run:
 
 ### `"yarn start"`,
 
-The app is built using webpack configuration created by me so this command Runs the app in Development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser. You also need to run the server file as well to completely run the app. The page will reload if you make edits.
-You will also see any lint errors in the console.
+The app is built using webpack configuration created by me so this command Runs the app in Development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser. The page will reload if you make edits.
 
 ### `"yarn build"`,
 
